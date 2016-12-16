@@ -2,7 +2,9 @@
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  */
+if (isset($_POST)) {
 $subsEmail= $_POST['subscriberEmail'];
+}
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
@@ -46,10 +48,10 @@ $mail->Username = "ranasinghyadav1@gmail.com";
 $mail->Password = "9472285510";
 
 //Set who the message is to be sent from
-$mail->setFrom(subsEmail, 'user');
+$mail->setFrom($subsEmail, 'user');
 
 //Set an alternative reply-to address
-$mail->addReplyTo('subsEmail', 'user');
+$mail->addReplyTo($subsEmail, 'user');
 
 //Set who the message is to be sent to
 $mail->addAddress('ranasinghyadav1@gmail.com', 'Rana');

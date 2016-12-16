@@ -665,7 +665,7 @@ $(document).ready(function(){
 
 <?php 
 
-$status = $_GET['status'];
+$status = $_GET['status'];error_log(print_r($status, TRUE));
 if($status == 'success') {
 echo '<script language="javascript">';
 echo 'alert("Successfully Subscribed")';
